@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Package, DollarSign, Calendar, FileText, Plus, Minus } from 'lucide-react';
 
-export default function PurchaseInvoicesPage() {
+function LegacyPurchaseInvoicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState([
     { id: 1, name: '', quantity: 0, price: 0, gstRate: 0, gstAmount: 0, total: 0 }
@@ -328,6 +328,18 @@ export default function PurchaseInvoicesPage() {
             <h4 className="text-lg font-medium text-gray-600 mb-2">No purchase invoices found</h4>
             <p className="text-gray-500 mb-4">Create your first purchase invoice to get started</p>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+ 
+export default function PurchaseInvoicesPage() {
+  return (
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white border rounded-xl p-8 text-center text-gray-500">
+          This page has been cleaned. Please use the current Purchase Invoices page.
         </div>
       </div>
     </div>

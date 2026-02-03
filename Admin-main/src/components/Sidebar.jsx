@@ -61,7 +61,7 @@ const navigationItems = [
     label: 'HRM',
     icon: Users,
     children: [
-      { id: 'add-new-employee', label: 'Add New Employee', icon: UserPlus, path: '/hrm/add-new-employee' },
+      { id: 'add-new-employee', label: 'Add New Employee', icon: UserPlus, path: '/hrm/employee-management' },
       { id: 'events', label: 'Events', icon: Calendar, path: '/hrm/events' },
       { id: 'leave', label: 'Leave Management', icon: FileText, path: '/hrm/leave' },
       { id: 'attendance', label: 'Attendance', icon: Clock, path: '/hrm/attendance' },
@@ -80,8 +80,8 @@ const navigationItems = [
     label: 'Invoice',
     icon: Receipt,
     children: [
-      { id: 'sales-invoice', label: 'Sales Stock Invoice', icon: TrendingUp, path: '/invoice/sales' },
-      { id: 'purchase-invoice', label: 'Purchase Stock Invoice', icon: ShoppingCart, path: '/invoice/purchase' },
+      { id: 'sales-invoice', label: 'Sales Stock Invoice', icon: TrendingUp, path: '/sales-invoices' },
+      { id: 'purchase-invoice', label: 'Purchase Stock Invoice', icon: ShoppingCart, path: '/purchase-invoices' },
     ],
   },
   {
@@ -89,12 +89,11 @@ const navigationItems = [
     label: 'Finance',
     icon: DollarSign,
     children: [
-      { id: 'account-receivable', label: 'Account Receivable', icon: TrendingUp, path: '/finance/receivable' },
-      { id: 'account-payable', label: 'Account Payable', icon: PiggyBank, path: '/finance/payable' },
+      { id: 'account-receivable', label: 'Account Receivable', icon: TrendingUp, path: '/accounts-receivable' },
+      { id: 'account-payable', label: 'Account Payable', icon: PiggyBank, path: '/finance-dashboard' }
     ],
   },
-  { id: 'ecommerce', label: 'E-Com Admin', icon: Store, path: '/ecommerce' },
-  { id: 'website', label: 'Website Admin', icon: Globe, path: '/website' },
+
 ];
 
 export default function Sidebar({ isOpen, onToggle }) {

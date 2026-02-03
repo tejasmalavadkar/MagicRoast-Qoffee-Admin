@@ -55,49 +55,37 @@ const LeaveManagementPage = () => {
                     Filters
                   </button>
                   
-                  {/* Filters Dropdown */}
+                  {/* Simple Date Filter Row */}
                   {showFilters && (
-                    <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
-                      <div className="p-4">
-                        <div className="flex justify-between items-center mb-3">
-                          <h3 className="font-medium text-gray-900">Date Range</h3>
-                          <button 
-                            onClick={() => setShowFilters(false)}
-                            className="text-gray-400 hover:text-gray-600"
-                          >
-                            <X className="w-4 h-4" />
-                          </button>
-                        </div>
+                    <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                        <div className="font-medium text-gray-900">Date Range</div>
                         
-                        <div className="space-y-3">
+                        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">From</label>
-                            <div className="relative">
-                              <input
-                                type="date"
-                                value={fromDate}
-                                onChange={(e) => setFromDate(e.target.value)}
-                                className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                              />
-                              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                            </div>
+                            <input
+                              type="date"
+                              value={fromDate}
+                              onChange={(e) => setFromDate(e.target.value)}
+                              placeholder="dd-mm-yyyy"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                            />
                           </div>
                           
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">To</label>
-                            <div className="relative">
-                              <input
-                                type="date"
-                                value={toDate}
-                                onChange={(e) => setToDate(e.target.value)}
-                                className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                              />
-                              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                            </div>
+                            <input
+                              type="date"
+                              value={toDate}
+                              onChange={(e) => setToDate(e.target.value)}
+                              placeholder="dd-mm-yyyy"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                            />
                           </div>
                         </div>
                         
-                        <div className="flex justify-end gap-2 mt-4">
+                        <div className="flex gap-2 pt-1">
                           <button 
                             onClick={() => {
                               setFromDate('');

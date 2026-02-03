@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
-import { Search, Filter, FileDown, Plus, Calendar, User, Clock, Mail, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Search, Filter, FileDown, Plus, Calendar, User, Clock, Mail, X, AlertTriangle } from 'lucide-react';
 
 const ApplyLeavePage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
+  const [filterRange, setFilterRange] = useState({ from: '', to: '' });
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [requests] = useState([]);
   const [formData, setFormData] = useState({
     startDate: '',
     endDate: '',
@@ -18,6 +23,21 @@ const ApplyLeavePage = () => {
       [name]: type === 'checkbox' ? checked : value
     }));
   };
+
+  const handleExport = () => {
+    if (!requests || requests.length === 0) {
+      setToastMessage('No data to export');
+      setShowToast(true);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    if (showToast) {
+      const t = setTimeout(() => setShowToast(false), 2500);
+      return () => clearTimeout(t);
+    }
+  }, [showToast]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,12 +89,18 @@ const ApplyLeavePage = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-3">
-                <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+              <div className="flex items-center gap-3 relative">
+                <button
+                  onClick={() => setShowFilters(prev => !prev)}
+                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                >
                   <Filter className="w-4 h-4" />
                   Filters
                 </button>
-                <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                <button
+                  onClick={handleExport}
+                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                >
                   <FileDown className="w-4 h-4" />
                   Export
                 </button>
@@ -85,6 +111,44 @@ const ApplyLeavePage = () => {
                   <Plus className="w-4 h-4" />
                   New Request
                 </button>
+
+                {showFilters && (
+                  <div className="absolute top-12 right-28 bg-white border rounded-lg shadow-lg w-72 z-10">
+                    <div className="px-4 py-3 border-b">
+                      <p className="text-sm font-semibold text-gray-800">Date Range</p>
+                    </div>
+                    <div className="p-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs text-gray-500 mb-1">From</label>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              placeholder="dd-mm-yyyy"
+                              value={filterRange.from}
+                              onChange={(e) => setFilterRange(r => ({ ...r, from: e.target.value }))}
+                              className="w-full pl-3 pr-9 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <Calendar className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2" />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-xs text-gray-500 mb-1">To</label>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              placeholder="dd-mm-yyyy"
+                              value={filterRange.to}
+                              onChange={(e) => setFilterRange(r => ({ ...r, to: e.target.value }))}
+                              className="w-full pl-3 pr-9 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <Calendar className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -222,6 +286,20 @@ const ApplyLeavePage = () => {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        )}
+        {showToast && (
+          <div className="fixed top-6 right-6 z-50">
+            <div className="flex items-center gap-3 bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-2 rounded shadow">
+              <AlertTriangle className="w-4 h-4" />
+              <span className="text-sm font-medium">{toastMessage}</span>
+              <button
+                onClick={() => setShowToast(false)}
+                className="text-yellow-700 hover:text-yellow-900"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
           </div>
         )}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Calendar, DollarSign, Users, Package, FileText } from 'lucide-react';
 
-export default function FinanceDashboardPage() {
+function LegacyFinanceDashboardPage() {
   const [employeeSalaryDate, setEmployeeSalaryDate] = useState('');
   const [rawMaterialDate, setRawMaterialDate] = useState('');
 
@@ -150,6 +150,18 @@ export default function FinanceDashboardPage() {
             <h4 className="text-lg font-medium text-gray-600 mb-2">No other expenses recorded</h4>
             <p className="text-gray-500 mb-4">Add new expenses to track miscellaneous costs</p>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+ 
+export default function FinanceDashboardPage() {
+  return (
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white border rounded-xl p-8 text-center text-gray-500">
+          This page has been cleaned. Please use the current Finance Dashboard page.
         </div>
       </div>
     </div>
