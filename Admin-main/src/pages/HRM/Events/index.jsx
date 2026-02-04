@@ -1066,7 +1066,7 @@ const Events = () => {
                               />
                               <div>
                                 <div className="font-medium text-foreground text-sm">{employee.name}</div>
-                                <div className="text-xs text-muted-foreground">{employee.position}</div>
+
                               </div>
                             </div>
                             {hasConflict && (

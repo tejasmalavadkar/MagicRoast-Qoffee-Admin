@@ -11,54 +11,15 @@ import {
 const EmployeeManagementPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Mock employee data
-  const employees = [
-    {
-      id: 1,
-      name: 'John Doe',
-      email: 'john.doe@company.com',
-      mobile: '+1 234 567 8900',
-      emergency: 'Jane Smith - +1 234 567 8901',
-      employeeId: 'EMP001',
-      password: '••••••••',
-      department: 'Engineering',
-      salary: 75000,
-      role: 'Employee',
-      status: 'active'
-    },
-    {
-      id: 2,
-      name: 'Sarah Johnson',
-      email: 'sarah.johnson@company.com',
-      mobile: '+1 234 567 8902',
-      emergency: 'Mike Johnson - +1 234 567 8903',
-      employeeId: 'EMP002',
-      password: '••••••••',
-      department: 'Marketing',
-      salary: 65000,
-      role: 'SuperAdmin',
-      status: 'active'
-    }
-  ];
+  // Mock employee data - empty for clean state
+  const employees = [];
 
   const filteredEmployees = employees.filter(emp => 
     emp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    emp.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
     emp.employeeId.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const getRoleBadge = (role) => {
-    const roleColors = {
-      Employee: 'bg-blue-100 text-blue-800',
-      SuperAdmin: 'bg-purple-100 text-purple-800'
-    };
-    
-    return (
-      <span className={`px-2 py-1 rounded-full text-xs font-medium ${roleColors[role] || 'bg-gray-100 text-gray-800'}`}>
-        {role}
-      </span>
-    );
-  };
+
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -98,14 +59,8 @@ const EmployeeManagementPage = () => {
                 <tr className="border-b border-gray-200">
                   <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Image</th>
                   <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Name</th>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Email</th>
                   <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Mobile</th>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Emergency</th>
                   <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Employee ID</th>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Password</th>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Department</th>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Salary</th>
-                  <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Role</th>
                   <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Status</th>
                   <th className="py-3 px-6 text-left text-sm font-medium text-gray-700">Actions</th>
                 </tr>
@@ -119,21 +74,8 @@ const EmployeeManagementPage = () => {
                       </div>
                     </td>
                     <td className="py-4 px-6 text-sm font-medium text-gray-900">{employee.name}</td>
-                    <td className="py-4 px-6 text-sm text-gray-700">{employee.email}</td>
                     <td className="py-4 px-6 text-sm text-gray-700">{employee.mobile}</td>
-                    <td className="py-4 px-6 text-sm text-gray-700">{employee.emergency}</td>
                     <td className="py-4 px-6 text-sm font-mono text-gray-900">{employee.employeeId}</td>
-                    <td className="py-4 px-6 text-sm text-gray-700">
-                      <div className="flex items-center gap-2">
-                        <span>{employee.password}</span>
-                        <button className="text-gray-400 hover:text-gray-600">
-                          <Eye className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </td>
-                    <td className="py-4 px-6 text-sm text-gray-700">{employee.department}</td>
-                    <td className="py-4 px-6 text-sm text-gray-900 font-medium">${employee.salary.toLocaleString()}</td>
-                    <td className="py-4 px-6">{getRoleBadge(employee.role)}</td>
                     <td className="py-4 px-6">
                       <div className="relative inline-block w-10 mr-2 align-middle select-none">
                         <input 

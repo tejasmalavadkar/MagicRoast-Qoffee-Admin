@@ -9,17 +9,10 @@ export function HRMProvider({ children }) {
   const [employees, setEmployees] = useState(() => 
     mockEmployees.map(emp => ({
       ...emp,
-      // Add additional fields for ExtendedEmployee
-      emergencyContact: emp.emergencyContact || '',
-      emergencyPhone: emp.emergencyPhone || '',
-      branch: emp.branch || 'Main Store - Downtown',
-      password: emp.password || '',
+      // Only add essential fields needed for functionality
+      emergencyContact: emp.emergencyContact || 'Not provided',
       avatar: emp.avatar || '',
-      address: emp.address || '',
-      dateOfBirth: emp.dateOfBirth || '',
-      gender: emp.gender || '',
-      bankAccount: emp.bankAccount || '',
-      bankName: emp.bankName || ''
+      // Remove extended fields to keep data simple
     }))
   );
   

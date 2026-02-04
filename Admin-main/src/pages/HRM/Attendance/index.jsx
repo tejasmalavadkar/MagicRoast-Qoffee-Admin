@@ -384,7 +384,7 @@ export default function AttendancePage() {
                       )}
                       <div>
                         <p className="font-medium text-foreground">{employee.name}</p>
-                        <p className="text-xs text-muted-foreground">{employee.email}</p>
+
                         <p className="text-xs text-muted-foreground font-mono">{employee.employeeId}</p>
                       </div>
                     </div>

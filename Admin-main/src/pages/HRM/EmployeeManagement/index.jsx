@@ -23,8 +23,6 @@ export default function EmployeeManagement() {
   
   const [searchTerm, setSearchTerm] = useState('');
   const [showAddModal, setShowAddModal] = useState(false);
-  const [showBankDetails, setShowBankDetails] = useState(false);
-  const [showPassword, setShowPassword] = useState({});
   
   // Optimized employee data state
   const [newEmployee, setNewEmployee] = useState({
@@ -67,12 +65,7 @@ export default function EmployeeManagement() {
     }));
   }, []);
 
-  const togglePasswordVisibility = useCallback((field) => {
-    setShowPassword(prev => ({
-      ...prev,
-      [field]: !prev[field]
-    }));
-  }, []);
+
 
   const handleAddEmployee = useCallback(() => {
     if (newEmployee.password !== newEmployee.confirmPassword) {
@@ -159,14 +152,8 @@ export default function EmployeeManagement() {
                 <tr className="border-b border-gray-200">
                   <th className="text-left py-3 px-4 font-medium text-gray-700">Image</th>
                   <th className="text-left py-3 px-4 font-medium text-gray-700">Name</th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-700">Email</th>
                   <th className="text-left py-3 px-4 font-medium text-gray-700">Mobile</th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-700">Emergency</th>
                   <th className="text-left py-3 px-4 font-medium text-gray-700">Employee ID</th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-700">Password</th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-700">Department</th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-700">Salary (₹)</th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-700">Role</th>
                   <th className="text-left py-3 px-4 font-medium text-gray-700">Status</th>
                   <th className="text-left py-3 px-4 font-medium text-gray-700">Actions</th>
                 </tr>
@@ -190,28 +177,8 @@ export default function EmployeeManagement() {
                       )}
                     </td>
                     <td className="py-3 px-4 font-medium text-gray-800">{employee.name}</td>
-                    <td className="py-3 px-4 text-gray-600">{employee.email}</td>
                     <td className="py-3 px-4 text-gray-600">{employee.phone}</td>
-                    <td className="py-3 px-4 text-gray-600">{employee.emergencyContact || 'N/A'}</td>
                     <td className="py-3 px-4 text-gray-600 font-mono">{employee.employeeId}</td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-center gap-2">
-                        <span className="text-gray-600">{'••••••'}</span>
-                        <button 
-                          className="text-gray-400 hover:text-gray-600"
-                          onClick={() => togglePasswordVisibility(employee.id)}
-                        >
-                          {showPassword[employee.id] ? <EyeOff className="w-4 h-4" /> : <EyeIcon className="w-4 h-4" />}
-                        </button>
-                      </div>
-                    </td>
-                    <td className="py-3 px-4 text-gray-600">{employee.department}</td>
-                    <td className="py-3 px-4 text-gray-800 font-medium">{formatCurrency(employee.salary)}</td>
-                    <td className="py-3 px-4">
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
-                        {employee.position}
-                      </span>
-                    </td>
                     <td className="py-3 px-4">
                       <label className="inline-flex items-center cursor-pointer">
                         <input

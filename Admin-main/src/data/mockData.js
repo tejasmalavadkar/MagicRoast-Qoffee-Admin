@@ -12,171 +12,74 @@ export const currentUser = {
 // Dashboard Statistics
 export const dashboardStats = {
   employees: {
-    total: 48,
-    active: 42,
-    inactive: 6,
-    departments: 8,
-    averageSalary: 4250,
+    total: 0,
+    active: 0,
+    inactive: 0,
+    departments: 0,
+    averageSalary: 0,
   },
   payroll: {
-    total: 48,
-    totalPaid: 178500,
-    pending: 12,
-    completed: 36,
-    averagePayment: 4125,
+    total: 0,
+    totalPaid: 0,
+    pending: 0,
+    completed: 0,
+    averagePayment: 0,
   },
   leave: {
-    total: 156,
-    pending: 8,
-    approved: 124,
-    rejected: 18,
-    active: 6,
+    total: 0,
+    pending: 0,
+    approved: 0,
+    rejected: 0,
+    active: 0,
   },
   attendance: {
-    totalRecords: 1248,
-    present: 1089,
-    absent: 67,
-    late: 58,
-    halfDay: 34,
-    averageWorkingHours: 7.8,
+    totalRecords: 0,
+    present: 0,
+    absent: 0,
+    late: 0,
+    halfDay: 0,
+    averageWorkingHours: 0,
   },
   purchases: {
-    totalInvoices: 234,
-    todayPurchases: 3,
-    totalAmount: 456780,
-    thisMonthPurchases: 28,
-    topSupplier: 'Coffee Bean Co.',
+    totalInvoices: 0,
+    todayPurchases: 0,
+    totalAmount: 0,
+    thisMonthPurchases: 0,
+    topSupplier: '',
   },
   salesInvoice: {
-    totalInvoices: 1847,
-    todayInvoices: 23,
-    totalAmount: 892450,
+    totalInvoices: 0,
+    todayInvoices: 0,
+    totalAmount: 0,
   },
   invoice: {
-    totalInvoices: 2081,
-    totalSpent: 456780,
-    currentBalance: 124680,
-    averageValue: 485,
+    totalInvoices: 0,
+    totalSpent: 0,
+    currentBalance: 0,
+    averageValue: 0,
   },
   paymentMethods: {
-    cash: 42,
-    cheque: 8,
-    online: 35,
-    upi: 15,
+    cash: 0,
+    cheque: 0,
+    online: 0,
+    upi: 0,
   },
   financial: {
-    employeeSalaryTotal: 178500,
-    rawMaterialPurchases: 234560,
-    otherExpenses: 45670,
+    employeeSalaryTotal: 0,
+    rawMaterialPurchases: 0,
+    otherExpenses: 0,
   },
   receivables: {
-    totalInvoices: 156,
-    totalAmount: 234500,
-    receivedAmount: 189200,
-    pendingAmount: 45300,
-    overdueInvoices: 12,
+    totalInvoices: 0,
+    totalAmount: 0,
+    receivedAmount: 0,
+    pendingAmount: 0,
+    overdueInvoices: 0,
   },
 };
 
 // Employees
-export const employees = [
-  {
-    id: '1',
-    employeeId: 'EMP001',
-    name: 'Sarah Johnson',
-    email: 'sarah.j@magicroastqoffee.com',
-    phone: '+1 (555) 123-4567',
-    department: 'Operations',
-    position: 'Store Manager',
-    salary: 5500,
-    status: 'active',
-    joinDate: '2023-03-15',
-  },
-  {
-    id: '2',
-    employeeId: 'EMP002',
-    name: 'Michael Chen',
-    email: 'michael.c@magicroastqoffee.com',
-    phone: '+1 (555) 234-5678',
-    department: 'Kitchen',
-    position: 'Head Barista',
-    salary: 4200,
-    status: 'active',
-    joinDate: '2023-05-20',
-  },
-  {
-    id: '3',
-    employeeId: 'EMP003',
-    name: 'Emily Davis',
-    email: 'emily.d@magicroastqoffee.com',
-    phone: '+1 (555) 345-6789',
-    department: 'Finance',
-    position: 'Accountant',
-    salary: 4800,
-    status: 'active',
-    joinDate: '2023-02-10',
-  },
-  {
-    id: '4',
-    employeeId: 'EMP004',
-    name: 'James Wilson',
-    email: 'james.w@magicroastqoffee.com',
-    phone: '+1 (555) 456-7890',
-    department: 'Inventory',
-    position: 'Warehouse Manager',
-    salary: 4500,
-    status: 'active',
-    joinDate: '2023-04-01',
-  },
-  {
-    id: '5',
-    employeeId: 'EMP005',
-    name: 'Lisa Martinez',
-    email: 'lisa.m@magicroastqoffee.com',
-    phone: '+1 (555) 567-8901',
-    department: 'Marketing',
-    position: 'Digital Marketing Lead',
-    salary: 4600,
-    status: 'active',
-    joinDate: '2023-06-15',
-  },
-  {
-    id: '6',
-    employeeId: 'EMP006',
-    name: 'Robert Brown',
-    email: 'robert.b@magicroastqoffee.com',
-    phone: '+1 (555) 678-9012',
-    department: 'Kitchen',
-    position: 'Barista',
-    salary: 3200,
-    status: 'active',
-    joinDate: '2023-08-01',
-  },
-  {
-    id: '7',
-    employeeId: 'EMP007',
-    name: 'Amanda Taylor',
-    email: 'amanda.t@magicroastqoffee.com',
-    phone: '+1 (555) 789-0123',
-    department: 'HR',
-    position: 'HR Specialist',
-    salary: 4400,
-    status: 'active',
-    joinDate: '2023-01-20',
-  },
-  {
-    id: '8',
-    employeeId: 'EMP008',
-    name: 'David Lee',
-    email: 'david.l@magicroastqoffee.com',
-    phone: '+1 (555) 890-1234',
-    department: 'IT',
-    position: 'System Administrator',
-    salary: 5200,
-    status: 'inactive',
-    joinDate: '2023-07-10',
-  },
-];
+export const employees = [];
 
 // Departments
 export const departments = [
@@ -191,43 +94,16 @@ export const departments = [
 ];
 
 // Attendance
-export const attendanceRecords = [
-  { id: '1', employeeId: '1', employeeName: 'Sarah Johnson', date: '2026-01-27', checkIn: '08:55', checkOut: '17:30', status: 'present', workingHours: 8.5 },
-  { id: '2', employeeId: '2', employeeName: 'Michael Chen', date: '2026-01-27', checkIn: '09:15', checkOut: '18:00', status: 'late', workingHours: 8.75 },
-  { id: '3', employeeId: '3', employeeName: 'Emily Davis', date: '2026-01-27', checkIn: '08:45', checkOut: '17:15', status: 'present', workingHours: 8.5 },
-  { id: '4', employeeId: '4', employeeName: 'James Wilson', date: '2026-01-27', checkIn: '08:30', checkOut: '17:00', status: 'present', workingHours: 8.5 },
-  { id: '5', employeeId: '5', employeeName: 'Lisa Martinez', date: '2026-01-27', checkIn: '09:00', status: 'late' },
-  { id: '6', employeeId: '6', employeeName: 'Robert Brown', date: '2026-01-27', checkIn: '08:50', status: 'present' },
-  { id: '7', employeeId: '7', employeeName: 'Amanda Taylor', date: '2026-01-27', checkIn: '08:30', checkOut: '12:30', status: 'half_day', workingHours: 4 },
-  { id: '8', employeeId: '8', employeeName: 'David Lee', date: '2026-01-27', checkIn: '', status: 'absent' },
-];
+export const attendanceRecords = [];
 
 // Leave Requests
-export const leaveRequests = [
-  { id: '1', employeeId: '1', employeeName: 'Sarah Johnson', type: 'annual', startDate: '2026-02-01', endDate: '2026-02-05', status: 'approved', reason: 'Family vacation' },
-  { id: '2', employeeId: '2', employeeName: 'Michael Chen', type: 'sick', startDate: '2026-01-28', endDate: '2026-01-29', status: 'pending', reason: 'Medical appointment' },
-  { id: '3', employeeId: '3', employeeName: 'Emily Davis', type: 'personal', startDate: '2026-02-10', endDate: '2026-02-10', status: 'pending', reason: 'Personal matters' },
-  { id: '4', employeeId: '5', employeeName: 'Lisa Martinez', type: 'annual', startDate: '2026-01-20', endDate: '2026-01-22', status: 'approved', reason: 'Short trip' },
-  { id: '5', employeeId: '7', employeeName: 'Amanda Taylor', type: 'maternity', startDate: '2026-03-01', endDate: '2026-05-31', status: 'approved', reason: 'Maternity leave' },
-  { id: '6', employeeId: '6', employeeName: 'Robert Brown', type: 'sick', startDate: '2026-01-15', endDate: '2026-01-15', status: 'rejected', reason: 'Flu symptoms' },
-];
+export const leaveRequests = [];
 
 // Payroll
-export const payrollRecords = [
-  { id: '1', employeeId: '1', employeeName: 'Sarah Johnson', month: '2026-01', baseSalary: 5500, allowances: 500, deductions: 400, netSalary: 5600, status: 'completed', paidDate: '2026-01-25' },
-  { id: '2', employeeId: '2', employeeName: 'Michael Chen', month: '2026-01', baseSalary: 4200, allowances: 300, deductions: 280, netSalary: 4220, status: 'completed', paidDate: '2026-01-25' },
-  { id: '3', employeeId: '3', employeeName: 'Emily Davis', month: '2026-01', baseSalary: 4800, allowances: 400, deductions: 350, netSalary: 4850, status: 'pending' },
-  { id: '4', employeeId: '4', employeeName: 'James Wilson', month: '2026-01', baseSalary: 4500, allowances: 350, deductions: 300, netSalary: 4550, status: 'pending' },
-  { id: '5', employeeId: '5', employeeName: 'Lisa Martinez', month: '2026-01', baseSalary: 4600, allowances: 400, deductions: 320, netSalary: 4680, status: 'completed', paidDate: '2026-01-25' },
-];
+export const payrollRecords = [];
 
 // Tasks
-export const tasks = [
-  { id: '1', title: 'Review Q1 inventory report', description: 'Analyze and compile Q1 inventory data', assigneeId: '4', assigneeName: 'James Wilson', priority: 'high', status: 'in_progress', dueDate: '2026-01-30', createdAt: '2026-01-20' },
-  { id: '2', title: 'Prepare monthly sales presentation', description: 'Create slides for board meeting', assigneeId: '1', assigneeName: 'Sarah Johnson', priority: 'urgent', status: 'todo', dueDate: '2026-01-28', createdAt: '2026-01-25' },
-  { id: '3', title: 'Update employee handbook', description: 'Include new policies', assigneeId: '7', assigneeName: 'Amanda Taylor', priority: 'medium', status: 'review', dueDate: '2026-02-05', createdAt: '2026-01-15' },
-  { id: '4', title: 'Marketing campaign review', description: 'Review social media performance', assigneeId: '5', assigneeName: 'Lisa Martinez', priority: 'low', status: 'completed', dueDate: '2026-01-26', createdAt: '2026-01-18' },
-];
+export const tasks = [];
 
 // Events
 export const events = [
@@ -257,19 +133,10 @@ export const warehouses = [
 ];
 
 // Customers
-export const customers = [
-  { id: '1', name: 'Downtown Cafe', email: 'orders@downtowncafe.com', phone: '+1 (555) 111-2222', address: '456 Main St', type: 'business', totalOrders: 48, totalSpent: 12450, createdAt: '2024-06-15' },
-  { id: '2', name: 'Jessica Smith', email: 'jessica.s@email.com', phone: '+1 (555) 222-3333', address: '789 Oak Ave', type: 'individual', totalOrders: 23, totalSpent: 890, createdAt: '2024-08-20' },
-  { id: '3', name: 'Office Solutions Inc', email: 'procurement@officesolutions.com', phone: '+1 (555) 333-4444', address: '321 Business Park', type: 'business', totalOrders: 156, totalSpent: 45680, createdAt: '2024-01-10' },
-  { id: '4', name: 'Mike Thompson', email: 'mike.t@email.com', phone: '+1 (555) 444-5555', address: '654 Pine St', type: 'individual', totalOrders: 12, totalSpent: 456, createdAt: '2025-01-05' },
-];
+export const customers = [];
 
 // Leads
-export const leads = [
-  { id: '1', name: 'Corporate Catering Co', email: 'info@corpcatering.com', phone: '+1 (555) 666-7777', source: 'Website', status: 'qualified', assignedTo: 'Lisa Martinez', createdAt: '2026-01-20' },
-  { id: '2', name: 'Startup Hub', email: 'admin@startuphub.com', phone: '+1 (555) 777-8888', source: 'Referral', status: 'new', assignedTo: 'Sarah Johnson', createdAt: '2026-01-25' },
-  { id: '3', name: 'Hotel Grandview', email: 'purchasing@hotelgrand.com', phone: '+1 (555) 888-9999', source: 'Trade Show', status: 'contacted', assignedTo: 'Lisa Martinez', createdAt: '2026-01-22' },
-];
+export const leads = [];
 
 // Follow-ups
 export const followUps = [
@@ -287,18 +154,10 @@ export const suppliers = [
 ];
 
 // Sales Invoices
-export const salesInvoices = [
-  { id: '1', invoiceNumber: 'INV-2026-001', customerId: '1', customerName: 'Downtown Cafe', items: [{ id: '1', productId: '1', productName: 'Arabica Coffee Beans', quantity: 10, unitPrice: 45, total: 450 }], subtotal: 450, tax: 40.5, discount: 0, total: 490.5, status: 'paid', paymentMethod: 'bank_transfer', createdAt: '2026-01-25', dueDate: '2026-02-25' },
-  { id: '2', invoiceNumber: 'INV-2026-002', customerId: '3', customerName: 'Office Solutions Inc', items: [{ id: '1', productId: '1', productName: 'Arabica Coffee Beans', quantity: 25, unitPrice: 45, total: 1125 }, { id: '2', productId: '5', productName: 'Vanilla Syrup', quantity: 10, unitPrice: 12, total: 120 }], subtotal: 1245, tax: 112.05, discount: 50, total: 1307.05, status: 'sent', createdAt: '2026-01-26', dueDate: '2026-02-26' },
-  { id: '3', invoiceNumber: 'INV-2026-003', customerId: '2', customerName: 'Jessica Smith', items: [{ id: '1', productId: '2', productName: 'Robusta Coffee Beans', quantity: 2, unitPrice: 35, total: 70 }], subtotal: 70, tax: 6.3, discount: 0, total: 76.3, status: 'overdue', createdAt: '2026-01-10', dueDate: '2026-01-20' },
-];
+export const salesInvoices = [];
 
 // Purchase Invoices
-export const purchaseInvoices = [
-  { id: '1', invoiceNumber: 'PO-2026-001', supplierId: '1', supplierName: 'Coffee Bean Co.', items: [{ id: '1', productId: '1', productName: 'Arabica Coffee Beans', quantity: 100, unitPrice: 28, total: 2800 }], subtotal: 2800, tax: 252, total: 3052, status: 'received', createdAt: '2026-01-20', dueDate: '2026-02-20' },
-  { id: '2', invoiceNumber: 'PO-2026-002', supplierId: '2', supplierName: 'Fresh Dairy Farm', items: [{ id: '1', productId: '3', productName: 'Whole Milk', quantity: 50, unitPrice: 2.5, total: 125 }, { id: '2', productId: '4', productName: 'Oat Milk', quantity: 30, unitPrice: 4, total: 120 }], subtotal: 245, tax: 22.05, total: 267.05, status: 'pending', createdAt: '2026-01-26', dueDate: '2026-02-10' },
-  { id: '3', invoiceNumber: 'PO-2026-003', supplierId: '4', supplierName: 'PackRight Solutions', items: [{ id: '1', productId: '6', productName: 'Paper Cups 12oz', quantity: 2000, unitPrice: 0.08, total: 160 }], subtotal: 160, tax: 14.4, total: 174.4, status: 'paid', createdAt: '2026-01-15', dueDate: '2026-01-30' },
-];
+export const purchaseInvoices = [];
 
 // Expenses
 export const expenses = [
@@ -333,12 +192,7 @@ export const ecomProducts = [
 ];
 
 // E-Commerce Orders
-export const ecomOrders = [
-  { id: '1', orderNumber: 'ORD-2026-0001', customerId: 'c1', customerName: 'Alex Turner', customerEmail: 'alex.t@email.com', items: [{ id: '1', productId: '1', productName: 'Premium Arabica Ground Coffee', quantity: 2, price: 15.99, total: 31.98 }], subtotal: 31.98, shipping: 5.99, tax: 2.88, total: 40.85, status: 'delivered', paymentStatus: 'paid', shippingAddress: '123 Home St, City, ST 12345', createdAt: '2026-01-20' },
-  { id: '2', orderNumber: 'ORD-2026-0002', customerId: 'c2', customerName: 'Maria Garcia', customerEmail: 'maria.g@email.com', items: [{ id: '1', productId: '2', productName: 'Espresso Blend Whole Beans', quantity: 3, price: 22.99, total: 68.97 }, { id: '2', productId: '4', productName: 'MagicRoast Branded Mug', quantity: 1, price: 14.99, total: 14.99 }], subtotal: 83.96, shipping: 7.99, tax: 7.56, total: 99.51, status: 'shipped', paymentStatus: 'paid', shippingAddress: '456 Oak Ave, Town, ST 67890', createdAt: '2026-01-25' },
-  { id: '3', orderNumber: 'ORD-2026-0003', customerId: 'c3', customerName: 'John Doe', customerEmail: 'john.d@email.com', items: [{ id: '1', productId: '3', productName: 'Cold Brew Concentrate', quantity: 4, price: 12.99, total: 51.96 }], subtotal: 51.96, shipping: 5.99, tax: 4.68, total: 62.63, status: 'processing', paymentStatus: 'paid', shippingAddress: '789 Pine Rd, Village, ST 11111', createdAt: '2026-01-26' },
-  { id: '4', orderNumber: 'ORD-2026-0004', customerId: 'c4', customerName: 'Emma Wilson', customerEmail: 'emma.w@email.com', items: [{ id: '1', productId: '1', productName: 'Premium Arabica Ground Coffee', quantity: 1, price: 15.99, total: 15.99 }], subtotal: 15.99, shipping: 5.99, tax: 1.44, total: 23.42, status: 'pending', paymentStatus: 'pending', shippingAddress: '321 Elm St, Metro, ST 22222', createdAt: '2026-01-27' },
-];
+export const ecomOrders = [];
 
 // Coupons
 export const coupons = [
@@ -381,13 +235,7 @@ export const branches = [
 ];
 
 // Recent Activity for Dashboard
-export const recentActivity = [
-  { id: '1', type: 'order', message: 'New online order #ORD-2026-0004', time: '5 minutes ago' },
-  { id: '2', type: 'employee', message: 'Sarah Johnson checked in', time: '15 minutes ago' },
-  { id: '3', type: 'inventory', message: 'Low stock alert: Oat Milk', time: '1 hour ago' },
-  { id: '4', type: 'invoice', message: 'Invoice INV-2026-002 sent', time: '2 hours ago' },
-  { id: '5', type: 'leave', message: 'New leave request from Michael Chen', time: '3 hours ago' },
-];
+export const recentActivity = [];
 
 // Chart Data for Dashboard
 export const salesChartData = [
