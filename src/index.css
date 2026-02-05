@@ -209,26 +209,6 @@
   .table-container {
     @apply w-full overflow-x-auto rounded-xl border bg-card;
   }
-  
-  .data-table {
-    @apply w-full text-sm;
-  }
-  
-  .data-table th {
-    @apply px-4 py-3 text-left font-semibold text-muted-foreground bg-muted/50 border-b;
-  }
-  
-  .data-table td {
-    @apply px-4 py-3 border-b border-border/50;
-  }
-  
-  .data-table tr:last-child td {
-    @apply border-b-0;
-  }
-  
-  .data-table tr:hover td {
-    @apply bg-muted/30;
-  }
 }
 
 @layer utilities {
@@ -267,6 +247,32 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--coffee-medium));
+}
+
+/* Fix datetime-local input calendar icon positioning */
+input[type="datetime-local"] {
+  padding-right: 2.5rem;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  background-color: transparent;
+}
+
+/* Fix date input calendar icon positioning */
+input[type="date"] {
+  padding-right: 2.5rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: transparent;
 }
 
 /* Animations */

@@ -117,7 +117,7 @@ export default function Sidebar({ isOpen, onToggle }) {
 
   const toggleExpand = (id) => {
     setExpandedItems(prev =>
-      prev.includes(id) ? prev.filter(item => item !== id) : [id]
+      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
     );
   };
 
@@ -160,7 +160,7 @@ export default function Sidebar({ isOpen, onToggle }) {
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed top-0 left-0 z-50 h-full w-[280px] bg-sidebar text-sidebar-foreground transition-transform duration-300 flex flex-col',
+          'fixed top-0 left-0 z-50 h-full w-[280px] bg-sidebar text-sidebar-foreground transition-all duration-300 ease-in-out flex flex-col',
           'lg:translate-x-0',
           isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
@@ -172,11 +172,11 @@ export default function Sidebar({ isOpen, onToggle }) {
               src={MagicRoastLogo} 
               alt="MagicRoast Logo" 
               className="w-10 h-10 rounded-xl object-contain cursor-pointer"
-              onClick={() => navigate('/')}
+              onClick={() => navigate('/my-tasks')}
             />
             <div>
-              <h1 className="font-bold text-lg text-sidebar-foreground cursor-pointer" onClick={() => navigate('/')}>MagicRoast</h1>
-              <p className="text-xs text-sidebar-foreground/60 cursor-pointer" onClick={() => navigate('/')}>Qoffee ERP</p>
+              <h1 className="font-bold text-lg text-sidebar-foreground cursor-pointer" onClick={() => navigate('/my-tasks')}>MagicRoast</h1>
+              <p className="text-xs text-sidebar-foreground/60 cursor-pointer" onClick={() => navigate('/my-tasks')}>Qoffee ERP</p>
             </div>
           </div>
           <button
