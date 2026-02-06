@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Package, DollarSign, Calendar, FileText, Plus, Minus } from 'lucide-react';
 
@@ -340,8 +341,22 @@ export default function PurchaseInvoicesPage() {
       <div className="max-w-4xl mx-auto">
         <div className="bg-white border rounded-xl p-8 text-center text-gray-500">
           This page has been cleaned. Please use the current Purchase Invoices page.
+=======
+import React from 'react';
+
+export default function PurchaseInvoicesPage() {
+  return (
+    <div className="min-h-screen bg-background p-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-card border rounded-xl p-8 text-center text-muted-foreground">
+          This page has been moved. Please use the main PurchaseInvoices page.
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
         </div>
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3

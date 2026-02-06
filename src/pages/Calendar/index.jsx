@@ -906,10 +906,17 @@ const Events = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* Event Modal */}
         {showEventModal && (
           <div className="absolute inset-0 bg-[#2F190E80] z-50 flex items-center justify-center p-4">
             <div className="bg-card rounded-xl border shadow-2xl max-w-md w-full flex flex-col max-h-[70vh]">
+=======
+        {/* Event Modal - POSITIONED AS LOW AS POSSIBLE */}
+        {showEventModal && (
+          <div className="fixed inset-0 bg-[#2F190E80] z-50 flex items-center justify-center p-4">
+            <div className="bg-card rounded-xl border shadow-2xl max-w-md w-full flex flex-col max-h-[70vh] mt-auto mb-8">
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
               <div className="sticky top-0 bg-gradient-to-r from-primary/5 to-primary/10 border-b px-6 py-4 flex items-center justify-between z-10">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
@@ -964,6 +971,7 @@ const Events = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
                           <label className="block text-sm font-medium mb-1 text-foreground">Start Date *</label>
+<<<<<<< HEAD
                           <input
                             type="date"
                             name="startDate"
@@ -981,6 +989,55 @@ const Events = () => {
                             onChange={handleInputChange}
                             className="w-full px-3 py-2 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                           />
+=======
+                          <div className="relative">
+                            <input
+                              type="date"
+                              name="startDate"
+                              value={eventForm.startDate}
+                              onChange={handleInputChange}
+                              className="w-full px-3 py-2 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all pr-10"
+                            />
+                            <button
+                              type="button"
+                              className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground hover:text-foreground focus:outline-none"
+                              onClick={() => {
+                                const input = document.querySelector('input[name="startDate"]');
+                                if (input) {
+                                  input.showPicker();
+                                }
+                              }}
+                              aria-label="Open start date picker"
+                            >
+                              <Calendar className="w-5 h-5" />
+                            </button>
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium mb-1 text-foreground">End Date</label>
+                          <div className="relative">
+                            <input
+                              type="date"
+                              name="endDate"
+                              value={eventForm.endDate}
+                              onChange={handleInputChange}
+                              className="w-full px-3 py-2 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all pr-10"
+                            />
+                            <button
+                              type="button"
+                              className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground hover:text-foreground focus:outline-none"
+                              onClick={() => {
+                                const input = document.querySelector('input[name="endDate"]');
+                                if (input) {
+                                  input.showPicker();
+                                }
+                              }}
+                              aria-label="Open end date picker"
+                            >
+                              <Calendar className="w-5 h-5" />
+                            </button>
+                          </div>
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
                         </div>
                       </div>
 

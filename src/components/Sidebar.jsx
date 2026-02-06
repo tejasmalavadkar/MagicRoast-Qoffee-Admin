@@ -117,7 +117,11 @@ export default function Sidebar({ isOpen, onToggle }) {
 
   const toggleExpand = (id) => {
     setExpandedItems(prev =>
+<<<<<<< HEAD
       prev.includes(id) ? prev.filter(item => item !== id) : [id]
+=======
+      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
     );
   };
 
@@ -160,7 +164,11 @@ export default function Sidebar({ isOpen, onToggle }) {
       {/* Sidebar */}
       <aside
         className={cn(
+<<<<<<< HEAD
           'fixed top-0 left-0 z-50 h-full w-[280px] bg-sidebar text-sidebar-foreground transition-transform duration-300 flex flex-col',
+=======
+          'fixed top-0 left-0 z-50 h-full w-[280px] bg-sidebar text-sidebar-foreground transition-all duration-300 ease-in-out flex flex-col',
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
           'lg:translate-x-0',
           isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
@@ -172,11 +180,19 @@ export default function Sidebar({ isOpen, onToggle }) {
               src={MagicRoastLogo} 
               alt="MagicRoast Logo" 
               className="w-10 h-10 rounded-xl object-contain cursor-pointer"
+<<<<<<< HEAD
               onClick={() => navigate('/')}
             />
             <div>
               <h1 className="font-bold text-lg text-sidebar-foreground cursor-pointer" onClick={() => navigate('/')}>MagicRoast</h1>
               <p className="text-xs text-sidebar-foreground/60 cursor-pointer" onClick={() => navigate('/')}>Qoffee ERP</p>
+=======
+              onClick={() => navigate('/my-tasks')}
+            />
+            <div>
+              <h1 className="font-bold text-lg text-sidebar-foreground cursor-pointer" onClick={() => navigate('/my-tasks')}>MagicRoast</h1>
+              <p className="text-xs text-sidebar-foreground/60 cursor-pointer" onClick={() => navigate('/my-tasks')}>Qoffee ERP</p>
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
             </div>
           </div>
           <button

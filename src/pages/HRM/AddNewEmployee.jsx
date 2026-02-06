@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { supabase } from '../../lib/supabase';
 import { testSupabaseConnection, testInsert } from '../../test-supabase';
+=======
+import { useHRM } from '../../context/HRMContext';
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
 import { 
   Save, 
   ArrowLeft, 
@@ -14,15 +18,20 @@ import {
   X,
   FileText,
   Shield,
+<<<<<<< HEAD
   Upload,
   Mail,
   Building,
   User,
   DollarSign
+=======
+  Upload
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
 } from 'lucide-react';
 
 export default function AddNewEmployee() {
   const navigate = useNavigate();
+<<<<<<< HEAD
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
@@ -30,6 +39,10 @@ export default function AddNewEmployee() {
 
   const [employees, setEmployees] = useState([]);
   const [loadingEmployees, setLoadingEmployees] = useState(true);
+=======
+  const { addEmployee } = useHRM();
+  const [showPassword, setShowPassword] = useState(false);
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
 
   const [formData, setFormData] = useState({
     title: 'Mr.',
@@ -56,6 +69,7 @@ export default function AddNewEmployee() {
     permissions: {}
   });
 
+<<<<<<< HEAD
   // Fetch employees on component mount
   React.useEffect(() => {
     fetchEmployees();
@@ -79,6 +93,8 @@ export default function AddNewEmployee() {
     }
   };
 
+=======
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
   const modules = [
     'Add New Employee', 'Events', 'Payroll', 'Leave Management', 'Attendance', 
     'Task Management', 'Leads', 'Products Details', 'Stock Transfer', 'Warehouse',
@@ -107,6 +123,7 @@ export default function AddNewEmployee() {
     }));
   };
 
+<<<<<<< HEAD
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -202,6 +219,24 @@ export default function AddNewEmployee() {
     } finally {
       setLoading(false);
     }
+=======
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.employeeId) {
+      alert('Please fill in all required fields');
+      return;
+    }
+
+    addEmployee({
+      ...formData,
+      id: `emp-${Date.now()}`,
+      status: 'active',
+      avatar: null,
+      joinDate: new Date().toISOString().split('T')[0],
+    });
+
+    navigate('/hrm/employee-management');
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
   };
 
   const FileUploadField = ({ label, subLabel, name }) => (
@@ -232,6 +267,7 @@ export default function AddNewEmployee() {
             <X className="w-5 h-5" />
           </button>
         </div>
+<<<<<<< HEAD
         
         {/* Message Display */}
         {message.text && (
@@ -239,6 +275,8 @@ export default function AddNewEmployee() {
             {message.text}
           </div>
         )}
+=======
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
 
         <div className="p-8">
           <form onSubmit={handleSubmit}>
@@ -614,6 +652,7 @@ export default function AddNewEmployee() {
             <div className="flex justify-end gap-4 pt-8 mt-4 border-t border-gray-100">
               <button
                 type="button"
+<<<<<<< HEAD
                 onClick={async () => {
                   setTesting(true);
                   const result = await testSupabaseConnection();
@@ -635,6 +674,8 @@ export default function AddNewEmployee() {
               </button>
               <button
                 type="button"
+=======
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
                 onClick={() => navigate('/hrm/employee-management')}
                 className="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition-colors"
               >
@@ -642,6 +683,7 @@ export default function AddNewEmployee() {
               </button>
               <button
                 type="submit"
+<<<<<<< HEAD
                 disabled={loading}
                 className="px-8 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2 font-medium transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
@@ -656,10 +698,17 @@ export default function AddNewEmployee() {
                     Add Employee
                   </>
                 )}
+=======
+                className="px-8 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2 font-medium transition-colors shadow-sm"
+              >
+                <Plus className="w-4 h-4" />
+                Add Employee
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
               </button>
             </div>
           </form>
         </div>
+<<<<<<< HEAD
 
         {/* Employee List Section */}
         <div className="p-8 border-t border-gray-100">
@@ -731,6 +780,8 @@ export default function AddNewEmployee() {
             </div>
           )}
         </div>
+=======
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
       </div>
     </div>
   );

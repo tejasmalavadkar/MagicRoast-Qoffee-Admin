@@ -209,6 +209,7 @@
   .table-container {
     @apply w-full overflow-x-auto rounded-xl border bg-card;
   }
+<<<<<<< HEAD
   
   .data-table {
     @apply w-full text-sm;
@@ -229,6 +230,8 @@
   .data-table tr:hover td {
     @apply bg-muted/30;
   }
+=======
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
 }
 
 @layer utilities {
@@ -269,6 +272,35 @@
   background: hsl(var(--coffee-medium));
 }
 
+<<<<<<< HEAD
+=======
+/* Fix datetime-local input calendar icon positioning */
+input[type="datetime-local"] {
+  padding-right: 2.5rem;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  background-color: transparent;
+}
+
+/* Fix date input calendar icon positioning */
+input[type="date"] {
+  padding-right: 2.5rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: transparent;
+}
+
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
 /* Animations */
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(20px); }

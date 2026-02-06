@@ -2,14 +2,22 @@ import React from 'react';
 
 export default function SalesInvoicesPage() {
   return (
+<<<<<<< HEAD
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white border rounded-xl p-8 text-center text-gray-500">
           This page has been cleaned. Please use the current Sales Invoices page.
+=======
+    <div className="min-h-screen bg-background p-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-card border rounded-xl p-8 text-center text-muted-foreground">
+          This page has been moved. Please use the main SalesInvoices page.
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
         </div>
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
                     <td className="py-2 px-4">$0.00</td>
                     <td className="py-2 px-4">
@@ -74,3 +82,6 @@ export default function SalesInvoicesPage() {
     </div>
   );
 }
+=======
+}
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3

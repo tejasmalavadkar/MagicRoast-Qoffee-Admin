@@ -36,7 +36,10 @@ function App() {
             <Routes>
             {/* Public Routes */}
             <Route path="/login" element={<LoginPage />} />
+<<<<<<< HEAD
             <Route path="/add-employee" element={<AddNewEmployeePage />} />
+=======
+>>>>>>> baec9d90e15bc827d60dc3306b781707193292a3
 
             {/* Protected Routes */}
             <Route element={<Layout />}>
